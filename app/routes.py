@@ -11,7 +11,6 @@ from app.email import send_password_reset_email
 from datetime import datetime
 from app.forms import PostForm 
 from flask_babel import _
-import os
 
 
 # create a var (if user is logged in) what include user's last seen
