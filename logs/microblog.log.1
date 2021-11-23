@@ -1,0 +1,128 @@
+2021-11-23 01:17:37,770 ERROR: Exception on /delete_post [GET] [in /home/danya/microblog/venv/lib/python3.9/site-packages/flask/app.py:1457]
+Traceback (most recent call last):
+  File "/home/danya/microblog/venv/lib/python3.9/site-packages/flask/app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/danya/microblog/venv/lib/python3.9/site-packages/flask/app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/danya/microblog/venv/lib/python3.9/site-packages/flask/app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/danya/microblog/venv/lib/python3.9/site-packages/flask/app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/home/danya/microblog/venv/lib/python3.9/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "/home/danya/microblog/app/routes.py", line 292, in delete_post
+    return render_template('delete_post.html', post = post, title='Delete Post', form = form)
+  File "/home/danya/microblog/venv/lib/python3.9/site-packages/flask/templating.py", line 147, in render_template
+    return _render(
+  File "/home/danya/microblog/venv/lib/python3.9/site-packages/flask/templating.py", line 128, in _render
+    rv = template.render(context)
+  File "/home/danya/microblog/venv/lib/python3.9/site-packages/jinja2/environment.py", line 1304, in render
+    self.environment.handle_exception()
+  File "/home/danya/microblog/venv/lib/python3.9/site-packages/jinja2/environment.py", line 925, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/danya/microblog/app/templates/delete_post.html", line 1, in top-level template code
+    {% extends "index.html"%}
+  File "/home/danya/microblog/app/templates/index.html", line 43, in top-level template code
+    {% block content %}
+  File "/home/danya/microblog/app/templates/delete_post.html", line 7, in block 'content'
+    {{ from.hidden_tag() }}
+  File "/home/danya/microblog/venv/lib/python3.9/site-packages/jinja2/environment.py", line 474, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'from' is undefined
+2021-11-23 01:17:57,489 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:54]
+2021-11-23 01:20:35,336 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:54]
+2021-11-23 01:26:47,781 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:54]
+2021-11-23 01:33:09,810 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:54]
+2021-11-23 01:36:58,858 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:54]
+2021-11-23 01:36:59,440 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:54]
+2021-11-23 01:37:31,702 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:54]
+2021-11-23 01:37:32,377 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:54]
+2021-11-23 01:39:36,930 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:54]
+2021-11-23 01:39:37,600 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:54]
+2021-11-23 01:54:26,621 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:54]
+2021-11-23 01:54:27,574 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:54]
+2021-11-23 16:16:08,533 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:54]
+2021-11-23 16:16:10,375 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:54]
+2021-11-23 16:17:20,270 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:54]
+2021-11-23 16:18:37,250 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:54]
+2021-11-23 16:54:04,794 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:54]
+2021-11-23 17:00:18,929 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:54]
+2021-11-23 17:02:39,182 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:54]
+2021-11-23 17:04:50,306 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:54]
+2021-11-23 17:05:03,296 ERROR: Exception on /all_profiles [GET] [in /home/danya/microblog/venv/lib/python3.9/site-packages/flask/app.py:1457]
+Traceback (most recent call last):
+  File "/home/danya/microblog/venv/lib/python3.9/site-packages/flask/app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/danya/microblog/venv/lib/python3.9/site-packages/flask/app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/danya/microblog/venv/lib/python3.9/site-packages/flask/app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/danya/microblog/venv/lib/python3.9/site-packages/flask/app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/home/danya/microblog/venv/lib/python3.9/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "/home/danya/microblog/app/routes.py", line 299, in all_profiles
+    return render_template('all_profiles.html' ,title='Profiles', users = users)
+  File "/home/danya/microblog/venv/lib/python3.9/site-packages/flask/templating.py", line 147, in render_template
+    return _render(
+  File "/home/danya/microblog/venv/lib/python3.9/site-packages/flask/templating.py", line 128, in _render
+    rv = template.render(context)
+  File "/home/danya/microblog/venv/lib/python3.9/site-packages/jinja2/environment.py", line 1304, in render
+    self.environment.handle_exception()
+  File "/home/danya/microblog/venv/lib/python3.9/site-packages/jinja2/environment.py", line 925, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/danya/microblog/app/templates/all_profiles.html", line 1, in top-level template code
+    {% extends "index.html"%}
+  File "/home/danya/microblog/app/templates/index.html", line 42, in top-level template code
+    {% block content %}
+  File "/home/danya/microblog/app/templates/all_profiles.html", line 8, in block 'content'
+    <td><img src="{{ post.author.avatar(36) }}"></td>
+  File "/home/danya/microblog/venv/lib/python3.9/site-packages/jinja2/environment.py", line 474, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'post' is undefined
+2021-11-23 17:05:29,780 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:54]
+2021-11-23 17:05:31,343 ERROR: Exception on /all_profiles [GET] [in /home/danya/microblog/venv/lib/python3.9/site-packages/flask/app.py:1457]
+Traceback (most recent call last):
+  File "/home/danya/microblog/venv/lib/python3.9/site-packages/flask/app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/danya/microblog/venv/lib/python3.9/site-packages/flask/app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/danya/microblog/venv/lib/python3.9/site-packages/flask/app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/danya/microblog/venv/lib/python3.9/site-packages/flask/app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/home/danya/microblog/venv/lib/python3.9/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "/home/danya/microblog/app/routes.py", line 299, in all_profiles
+    return render_template('all_profiles.html' ,title='Profiles', users = users)
+  File "/home/danya/microblog/venv/lib/python3.9/site-packages/flask/templating.py", line 147, in render_template
+    return _render(
+  File "/home/danya/microblog/venv/lib/python3.9/site-packages/flask/templating.py", line 128, in _render
+    rv = template.render(context)
+  File "/home/danya/microblog/venv/lib/python3.9/site-packages/jinja2/environment.py", line 1304, in render
+    self.environment.handle_exception()
+  File "/home/danya/microblog/venv/lib/python3.9/site-packages/jinja2/environment.py", line 925, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/danya/microblog/app/templates/all_profiles.html", line 1, in top-level template code
+    {% extends "index.html"%}
+  File "/home/danya/microblog/app/templates/index.html", line 42, in top-level template code
+    {% block content %}
+  File "/home/danya/microblog/app/templates/all_profiles.html", line 8, in block 'content'
+    <td><img src="{{ user.username.avatar(36) }}"></td>
+  File "/home/danya/microblog/venv/lib/python3.9/site-packages/jinja2/utils.py", line 84, in from_obj
+    if hasattr(obj, "jinja_pass_arg"):
+jinja2.exceptions.UndefinedError: 'str object' has no attribute 'avatar'
+2021-11-23 17:07:50,919 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:54]
+2021-11-23 17:08:02,003 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:54]
+2021-11-23 17:08:11,095 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:54]
+2021-11-23 17:10:27,056 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:54]
+2021-11-23 17:11:23,302 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:54]
+2021-11-23 17:12:02,744 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:54]
+2021-11-23 17:13:46,364 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:54]
+2021-11-23 17:14:25,774 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:54]
+2021-11-23 17:14:40,845 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:54]
+2021-11-23 17:15:06,124 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:54]
+2021-11-23 17:16:04,002 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:54]
+2021-11-23 17:32:42,933 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:57]
+2021-11-23 17:34:20,641 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:57]
+2021-11-23 17:34:21,820 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:57]

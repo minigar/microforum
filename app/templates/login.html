@@ -1,0 +1,36 @@
+<!-- inheritance from index.html -->
+{% extends 'index.html' %}
+
+<!-- using head block witch create in index.html-->
+{% block head %}<link rel="stylesheet" href="/static/css/login.css" type="text/css">{% endblock %}
+
+<!-- using title content witch create in index.html-->
+{% block content %}
+
+<!-- create login form -->
+<div>
+    <form class="box" action="/login" method="POST" novalidate>
+        {{ form.hidden_tag() }}
+
+        <h1>Sign In</h1>
+        <p title="Enter your username"  id="labeltwo">
+            {{ form.username.label }}
+            {{ form.username(size=25) }}
+            {% for error in form.username.errors %}
+            <span id="spanusername" style="color:red">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p title="Enter your password"  id="labelthree">
+            {{ form.password.label }}
+            {{ form.password(size=25) }}
+            {% for error in form.password.errors %}
+            <span id="spanpassword" style="color:red">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p id="labelfour">{{ form.remember_me() }} {{ form.remember_me.label }}</p>
+        <p>{{ form.submit() }}</p>
+        <a href="{{ url_for('register') }}" id="register" type="button">Click to regist</a>
+            <a id="forgotpassw" href="{{ url_for('reset_password_request') }}">Forgot Your Password? Click to Reset It</a>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,49 @@
+#flashmessages
+{
+    position: relative;
+    bottom:600px;
+    left:30%;
+}
+
+#post
+{
+    border: 0;
+    background-color: black;
+    display: block;
+    text-align: center;
+    border: 2px solid #3498db;
+    padding: 14px 10px;
+    width: 175px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: all 0.7s;
+}
+
+#post:focus, #post:hover
+{
+    border-color: #850e9d;
+}
+
+input[type="submit"]
+{
+    border: 0;
+    background: none;
+    width: 75px;
+    display: block;
+    text-align: center;
+    border: 2px solid #2ecc71;
+    padding: 14px 10px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.7s;
+    cursor: pointer;
+    font: italic small-caps bold 12px/1 cursive;
+}
+
+input[type="submit"]:focus,input[type="submit"]:hover 
+{
+    background: black;
+    color: orange;
+}

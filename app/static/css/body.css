@@ -1,0 +1,17 @@
+body 
+{
+    background-color: #303952;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    height: 100%;
+}
+
+h1 
+{
+    text-align: center;
+    color: black;
+    font-family: veranda;
+    position: relative;
+    top: 10px;
+}

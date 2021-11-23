@@ -1,0 +1,61 @@
+#username,
+#email,
+#password,
+#password2
+{
+    border: 0;
+    background-color: black;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #3498db;
+    padding: 14px 10px;
+    width: 175px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: all 0.7s;
+}
+
+#username:hover,#username:focus,
+#email:hover,#email:focus,
+#password:hover,#password:focus,
+#password2:hover,#password2:focus
+{
+    width: 200px;
+    border: 3px solid #850e9d;
+    font: italic small-caps bold 12px/1 cursive;
+}
+
+label:hover
+{
+    cursor: pointer;
+}
+
+#pusername,
+#pemail,
+#ppassword,
+#ppassword2
+{
+    margin: 20px auto;
+    text-align: center;
+}
+
+/* Button submit */
+input[type="submit" i]
+{
+    border: 0;
+    background: none;
+    margin: 20px auto;
+    width: 75px;
+    display: block;
+    text-align: center;
+    border: 2px solid #2ecc71;
+    padding: 14px 10px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.7s;
+    cursor: pointer;
+    font: italic small-caps bold 12px/1 cursive;
+}

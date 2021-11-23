@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>{{title}}</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/general.css" type="text/css">
+    <link rel="stylesheet" href="/static/css/body.css" type="text/css">
+    <link rel="stylesheet" href="/static/css/index.css" type="text/css">
+{% block head %}{% endblock %}
+{{ moment.include_moment() }}
+{{ moment.lang('en-US') }}
+</head>
+
+
+<body>
+
+
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+    {% for message in messages %}
+        <div id="lili">{{ message }}</div>
+    {% endfor %}
+{% endif %}
+{% endwith %}
+
+
+<div class="content", id="footer">
+    <a href="{{ url_for('index') }}">Home</a>
+    <a href="{{ url_for('explore') }}">Explore</a>
+    {% if current_user.is_anonymous %}
+    <a href="{{ url_for('login') }}">Login</a>
+    {% else %}
+    <a href="{{ url_for('user', username=current_user.username) }}">Profile</a>
+    <a href="{{ url_for('edit_profile')}}">Edit Profile</a>
+    <a href="{{ url_for('logout') }}">Logout</a>
+    {% endif %}
+</div>
+
+
+{% block content %}
+    <h1>Hi, {{ current_user.username }}!</h1>
+
+    {% if form %}
+        <form action="" method="post">
+            {{ form.hidden_tag() }}
+            <p>
+                {{ form.post.label }}<br>
+                {{ form.post(cols=32, rows=4) }}<br>
+                {% for error in form.post.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            </p>
+
+            <p>{{ form.submit() }}</p>
+        </form>
+    {% endif %}
+
+    {% for post in posts %}
+        {% include '_post.html' %}
+    {% endfor %}
+
+    {% if prev_url %}
+        <a style="color: greenyellow;" href="{{ prev_url or '#' }}"><-</a>
+    {% endif %}
+
+    {% if next_url %}
+        <a style="color:greenyellow;" href="{{ next_url or '#' }}">-></a>
+    {% endif %}
+
+    {% endblock %}
+
+
+</body>
+
+
+</html>

@@ -1,0 +1,78 @@
+.content 
+{
+    background: black;
+    border:0;
+    border-radius: 12px;
+    width:99.8%;
+    height:30px;
+    border: 2px solid #3498db;
+    position: fixed;
+    top: 0;
+    word-spacing: 9px;
+    transition: 0.7s;
+}
+
+.content a 
+{
+    color: rgb(150, 46, 150);
+    border: 0;
+    position: relative;
+    left: 44%;
+    font: italic small-caps bold 16px/2 cursive;
+    text-decoration: none;
+}
+
+a
+{
+    text-decoration: none;
+}
+
+.content a:hover 
+{
+    color: pink;
+}
+
+#s404
+{
+    color:white;
+    position: relative;
+    top: 100px;
+}
+
+#about
+{
+    margin: 0;
+    position: relative;
+    top: 100px;
+}
+
+
+.flash
+{
+    margin:0;
+    padding: 0;
+    position: relative;
+    top: 750px;
+    left: 500px;
+}
+
+.flash.success
+{
+    border: 1px solid #21DB56;
+    background: #AEFFC5;
+}
+.flash.error
+{
+    border: 1px solid #ff4343;
+    background: #FF9c9c
+}
+
+#lili
+{
+    padding: 0;
+    margin: 0;
+    color: #fff;
+    position:absolute;
+    top: 380px;
+    left: 830px;
+}

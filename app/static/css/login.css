@@ -1,0 +1,214 @@
+/* general perfomens for form */
+.box
+{
+    width: 70%;
+    padding: 15%;
+    margin: 20px auto;
+    background-color: #2c2c54;
+}
+
+/* General perfomens for h1 */
+.box h1 
+{
+    text-transform: uppercase;
+    color: rgb(25, 70, 216);
+    font-weight: 500;
+}
+
+/* Paragraphs from form */
+.box #name, 
+.box #username,
+.box #password 
+{
+    border: 0;
+    background-color: black;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #3498db;
+    padding: 14px 10px;
+    width: 175px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: all 0.7s;
+}
+
+/* Paragraphs from form */
+.box #name:hover,
+.box #username:hover,
+.box #password:hover 
+{
+    width: 200px;
+    border: 3px solid #850e9d;
+    font: italic small-caps bold 12px/1 cursive;
+}
+
+
+/* Paragraphs from form */
+.box #name:focus,
+.box #username:focus,
+.box #password:focus 
+{
+    width: 200px;
+    border: 3px solid #850e9d;
+    font: italic small-caps bold 12px/1 cursive;
+}
+
+
+.box span
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+}
+
+/* Button submit */
+input[type="submit" i]
+{
+    border: 0;
+    background: none;
+    margin: 20px auto;
+    width: 75px;
+    display: block;
+    text-align: center;
+    border: 2px solid #2ecc71;
+    padding: 14px 10px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.7s;
+    cursor: pointer;
+    font: italic small-caps bold 12px/1 cursive;
+    position: relative;
+    right: 60px;
+}
+
+
+
+/* Button submit */
+input[type="submit" i]:focus,input[type="submit" i]:hover 
+{
+    background: black;
+    color: orange;
+}
+
+/* Button href=register */
+.box #register 
+{
+    border: 0;
+    background: none;
+    margin: 20px auto;
+    width: 75px;
+    display: block;
+    text-align: center;
+    border: 2px solid #2ecc71;
+    padding: 14px 10px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.7s;
+    cursor: pointer;
+    font: italic small-caps bold 12px/1 cursive;
+    position: relative;
+    left: 40px;
+    bottom: 65px;
+}
+
+.box #register:focus, .box #register:hover
+{
+    background: black;
+    color: orange;
+}
+
+.box #text_register
+{
+    color: white;
+    margin: 20px auto;
+}
+
+/* General perfomens for all lables */
+.box label 
+{
+    position: relative;
+    left: 630px;
+    top: 13px;
+}
+
+/* Tick lable */
+.box input[type="checkbox" i] 
+{
+    position: relative;
+    left: 760px;
+    top: 13px;
+}
+/* Tick lable */
+input[type="checkbox" i] 
+{
+    border: 10px;
+    border-color: green;
+    border-radius: 16px;
+}
+
+/* Tick lable */
+input[type="checkbox" i] 
+{
+    background-color: green;
+    cursor: pointer;
+    appearance: auto;
+    box-sizing: border-box;
+    margin: 3px 3px 3px 4px;
+    padding: initial;
+    border: 5px;
+}
+
+/* Perfomens for text "Remember me" */
+#labelfour
+{
+    margin : 20px auto;
+    /* position: relative; */
+    /* right: 50px; */
+    /* bottom: 10px; */
+}
+/* Perfomens for lable about name */
+.box label[for=name]
+{
+    margin: 20px auto;
+    /* position: relative;
+    left: 48%; */
+}
+
+
+.box label:hover
+{
+    cursor: pointer;
+}
+
+
+#forgotpassw
+{
+    border: 0;
+    background: none;
+    margin: 20px auto;
+    width: 75px;
+    display: block;
+    text-align: center;
+    border: 2px solid #2ecc71;
+    padding: 14px 10px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.7s;
+    cursor: pointer;
+    font: italic small-caps bold 12px/1 cursive;
+    position: relative;
+    bottom:30px;
+}
+
+#forgotpassw:focus, #forgotpassw:hover
+{
+    background: black;
+    color: orange;
+}
