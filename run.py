@@ -2,6 +2,7 @@
 from app import app, db
 from app.models import User, Post, followers
 from app import routes
+from app import cli
 
 #decorator for function for shell. can use this varrinable and classes what write  in this function
 @app.shell_context_processor
