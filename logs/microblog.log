@@ -1,26 +1,48 @@
-2021-11-26 12:17:15,846 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:62]
-2021-11-26 12:34:22,049 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:62]
-2021-11-26 12:40:49,250 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:62]
-2021-11-26 12:42:40,163 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:62]
-2021-11-27 19:34:51,709 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:62]
-2021-11-27 19:34:52,878 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:62]
-2021-11-27 19:38:12,358 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:62]
-2021-11-27 19:41:13,318 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:62]
-2021-11-27 19:46:55,086 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:62]
-2021-11-27 20:00:49,887 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:62]
-2021-11-27 20:03:47,375 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:62]
-2021-11-27 20:06:28,276 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:62]
-2021-11-27 20:07:18,960 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:62]
-2021-11-27 20:10:53,481 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:62]
-2021-11-27 20:11:48,154 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:62]
-2021-11-27 20:12:31,969 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:62]
-2021-11-27 20:12:43,224 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:62]
-2021-11-27 20:13:33,985 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:62]
-2021-11-27 20:14:04,433 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:62]
-2021-11-27 20:14:13,134 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:62]
-2021-11-27 20:14:15,309 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:62]
-2021-11-27 20:14:31,980 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:62]
-2021-11-27 20:14:43,192 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:62]
-2021-11-27 20:14:56,544 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:62]
-2021-11-27 20:14:57,651 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:62]
-2021-11-27 20:15:10,791 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:62]
+2021-11-28 18:27:22,181 ERROR: Exception on /explore [GET] [in /home/danya/microblog/venv/lib/python3.9/site-packages/flask/app.py:1457]
+Traceback (most recent call last):
+  File "/home/danya/microblog/venv/lib/python3.9/site-packages/flask/app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/danya/microblog/venv/lib/python3.9/site-packages/flask/app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/danya/microblog/venv/lib/python3.9/site-packages/flask/app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/danya/microblog/venv/lib/python3.9/site-packages/flask/app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/home/danya/microblog/venv/lib/python3.9/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "/home/danya/microblog/app/routes.py", line 288, in explore
+    return render_template('index.html', posts=posts.items, next_url = next_url, prev_url = prev_url, title='Explore')
+  File "/home/danya/microblog/venv/lib/python3.9/site-packages/flask/templating.py", line 147, in render_template
+    return _render(
+  File "/home/danya/microblog/venv/lib/python3.9/site-packages/flask/templating.py", line 128, in _render
+    rv = template.render(context)
+  File "/home/danya/microblog/venv/lib/python3.9/site-packages/jinja2/environment.py", line 1304, in render
+    self.environment.handle_exception()
+  File "/home/danya/microblog/venv/lib/python3.9/site-packages/jinja2/environment.py", line 925, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/danya/microblog/app/templates/index.html", line 1, in top-level template code
+    {% extends 'bootstrap/index.html' %}
+  File "/home/danya/microblog/venv/lib/python3.9/site-packages/flask/templating.py", line 59, in get_source
+    return self._get_source_fast(environment, template)
+  File "/home/danya/microblog/venv/lib/python3.9/site-packages/flask/templating.py", line 95, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: bootstrap/index.html
+2021-11-28 18:29:34,782 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:65]
+2021-11-28 18:33:06,915 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:65]
+2021-11-28 18:35:10,025 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:65]
+2021-11-28 18:36:06,744 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:65]
+2021-11-28 18:40:51,165 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:65]
+2021-11-28 18:42:12,344 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:65]
+2021-11-28 18:44:23,018 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:65]
+2021-11-28 18:45:01,164 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:65]
+2021-11-28 21:47:23,503 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:65]
+2021-11-28 21:47:53,455 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:65]
+2021-11-30 18:58:32,399 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:65]
+2021-11-30 18:58:34,051 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:65]
+2021-12-05 23:55:54,431 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:65]
+2021-12-05 23:56:47,078 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:65]
+2021-12-05 23:57:46,056 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:65]
+2021-12-06 00:29:48,567 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:65]
+2021-12-06 00:29:49,951 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:65]
+2021-12-06 02:02:11,682 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:65]
+2021-12-06 02:02:12,750 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:65]

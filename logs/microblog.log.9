@@ -1,10 +1,25 @@
-2021-11-22 20:43:59,526 ERROR: Exception on /static/css/body.css [GET] [in /home/danya/microblog/venv/lib/python3.9/site-packages/flask/app.py:1457]
+2021-11-22 22:38:23,443 ERROR: Exception on /delete_post [GET] [in /home/danya/microblog/venv/lib/python3.9/site-packages/flask/app.py:1457]
+Traceback (most recent call last):
+  File "/home/danya/microblog/venv/lib/python3.9/site-packages/flask/app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/danya/microblog/venv/lib/python3.9/site-packages/flask/app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/danya/microblog/venv/lib/python3.9/site-packages/flask/app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/danya/microblog/venv/lib/python3.9/site-packages/flask/app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/home/danya/microblog/venv/lib/python3.9/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+TypeError: delete_post() missing 1 required positional argument: 'body'
+2021-11-22 22:39:02,911 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:54]
+2021-11-22 22:41:13,213 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:54]
+2021-11-22 22:41:14,721 ERROR: Exception on /delete_post [GET] [in /home/danya/microblog/venv/lib/python3.9/site-packages/flask/app.py:1457]
 Traceback (most recent call last):
   File "/home/danya/microblog/venv/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1799, in _execute_context
     self.dialect.do_execute(
   File "/home/danya/microblog/venv/lib/python3.9/site-packages/sqlalchemy/engine/default.py", line 717, in do_execute
     cursor.execute(statement, parameters)
-sqlite3.OperationalError: database is locked
+sqlite3.InterfaceError: Error binding parameter 0 - probably unsupported type.
 
 The above exception was the direct cause of the following exception:
 
@@ -13,37 +28,20 @@ Traceback (most recent call last):
     response = self.full_dispatch_request()
   File "/home/danya/microblog/venv/lib/python3.9/site-packages/flask/app.py", line 1518, in full_dispatch_request
     rv = self.handle_user_exception(e)
-  File "/home/danya/microblog/venv/lib/python3.9/site-packages/flask/app.py", line 1514, in full_dispatch_request
-    rv = self.preprocess_request()
-  File "/home/danya/microblog/venv/lib/python3.9/site-packages/flask/app.py", line 1857, in preprocess_request
-    rv = self.ensure_sync(before_func)()
-  File "/home/danya/microblog/app/routes.py", line 19, in before_request
-    db.session.commit()
-  File "<string>", line 2, in commit
-  File "/home/danya/microblog/venv/lib/python3.9/site-packages/sqlalchemy/orm/session.py", line 1428, in commit
-    self._transaction.commit(_to_root=self.future)
-  File "/home/danya/microblog/venv/lib/python3.9/site-packages/sqlalchemy/orm/session.py", line 829, in commit
-    self._prepare_impl()
-  File "/home/danya/microblog/venv/lib/python3.9/site-packages/sqlalchemy/orm/session.py", line 808, in _prepare_impl
-    self.session.flush()
-  File "/home/danya/microblog/venv/lib/python3.9/site-packages/sqlalchemy/orm/session.py", line 3340, in flush
-    self._flush(objects)
-  File "/home/danya/microblog/venv/lib/python3.9/site-packages/sqlalchemy/orm/session.py", line 3480, in _flush
-    transaction.rollback(_capture_exception=True)
-  File "/home/danya/microblog/venv/lib/python3.9/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
-    compat.raise_(
-  File "/home/danya/microblog/venv/lib/python3.9/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
-    raise exception
-  File "/home/danya/microblog/venv/lib/python3.9/site-packages/sqlalchemy/orm/session.py", line 3440, in _flush
-    flush_context.execute()
-  File "/home/danya/microblog/venv/lib/python3.9/site-packages/sqlalchemy/orm/unitofwork.py", line 456, in execute
-    rec.execute(self)
-  File "/home/danya/microblog/venv/lib/python3.9/site-packages/sqlalchemy/orm/unitofwork.py", line 630, in execute
-    util.preloaded.orm_persistence.save_obj(
-  File "/home/danya/microblog/venv/lib/python3.9/site-packages/sqlalchemy/orm/persistence.py", line 236, in save_obj
-    _emit_update_statements(
-  File "/home/danya/microblog/venv/lib/python3.9/site-packages/sqlalchemy/orm/persistence.py", line 1000, in _emit_update_statements
-    c = connection._execute_20(
+  File "/home/danya/microblog/venv/lib/python3.9/site-packages/flask/app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/danya/microblog/venv/lib/python3.9/site-packages/flask/app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/home/danya/microblog/venv/lib/python3.9/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "/home/danya/microblog/app/routes.py", line 278, in delete_post
+    post = Post.query.filter_by(body=form.body).first()
+  File "/home/danya/microblog/venv/lib/python3.9/site-packages/sqlalchemy/orm/query.py", line 2762, in first
+    return self.limit(1)._iter().first()
+  File "/home/danya/microblog/venv/lib/python3.9/site-packages/sqlalchemy/orm/query.py", line 2846, in _iter
+    result = self.session.execute(
+  File "/home/danya/microblog/venv/lib/python3.9/site-packages/sqlalchemy/orm/session.py", line 1689, in execute
+    result = conn._execute_20(statement, params or {}, execution_options)
   File "/home/danya/microblog/venv/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1611, in _execute_20
     return meth(self, args_10style, kwargs_10style, execution_options)
   File "/home/danya/microblog/venv/lib/python3.9/site-packages/sqlalchemy/sql/elements.py", line 325, in _execute_on_connection
@@ -60,41 +58,24 @@ Traceback (most recent call last):
     self.dialect.do_execute(
   File "/home/danya/microblog/venv/lib/python3.9/site-packages/sqlalchemy/engine/default.py", line 717, in do_execute
     cursor.execute(statement, parameters)
-sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) database is locked
-[SQL: UPDATE user SET last_seen=? WHERE user.id = ?]
-[parameters: ('2021-11-22 18:43:54.513924', 2)]
-(Background on this error at: https://sqlalche.me/e/14/e3q8)
-2021-11-22 21:10:09,854 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:54]
-2021-11-22 21:10:18,150 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:54]
-2021-11-22 21:11:39,596 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:54]
-2021-11-22 21:13:11,264 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:54]
-2021-11-22 21:13:47,288 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:54]
-2021-11-22 21:14:04,435 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:54]
-2021-11-22 21:14:38,948 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:54]
-2021-11-22 21:15:29,417 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:54]
-2021-11-22 21:16:04,695 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:54]
-2021-11-22 21:17:04,309 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:54]
-2021-11-22 21:17:33,633 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:54]
-2021-11-22 21:18:22,009 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:54]
-2021-11-22 21:20:56,349 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:54]
-2021-11-22 21:22:01,143 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:54]
-2021-11-22 21:24:14,128 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:54]
-2021-11-22 21:24:59,783 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:54]
-2021-11-22 21:25:43,447 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:54]
-2021-11-22 21:26:50,405 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:54]
-2021-11-22 21:36:57,965 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:54]
-2021-11-22 21:37:36,562 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:54]
-2021-11-22 21:38:13,774 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:54]
-2021-11-22 21:56:14,168 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:54]
-2021-11-22 21:56:16,950 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:54]
-2021-11-22 21:56:31,882 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:54]
-2021-11-22 21:57:59,234 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:54]
-2021-11-22 21:58:55,664 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:54]
-2021-11-22 21:59:23,738 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:54]
-2021-11-22 22:00:09,190 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:54]
-2021-11-22 22:01:55,624 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:54]
-2021-11-22 22:03:23,537 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:54]
-2021-11-22 22:06:53,426 ERROR: Exception on /delete_post [GET] [in /home/danya/microblog/venv/lib/python3.9/site-packages/flask/app.py:1457]
+sqlalchemy.exc.InterfaceError: (sqlite3.InterfaceError) Error binding parameter 0 - probably unsupported type.
+[SQL: SELECT post.id AS post_id, post.body AS post_body, post.timestamp AS post_timestamp, post.user_id AS post_user_id 
+FROM post 
+WHERE post.body = ?
+ LIMIT ? OFFSET ?]
+[parameters: (<wtforms.fields.core.StringField object at 0x7f2aa5972fd0>, 1, 0)]
+(Background on this error at: https://sqlalche.me/e/14/rvf5)
+2021-11-22 22:41:48,039 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:54]
+2021-11-22 22:42:13,250 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:54]
+2021-11-22 22:42:45,507 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:54]
+2021-11-22 22:44:38,001 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:54]
+2021-11-22 22:45:34,627 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:54]
+2021-11-22 22:46:41,203 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:54]
+2021-11-22 22:48:46,079 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:54]
+2021-11-22 22:49:16,212 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:54]
+2021-11-22 22:50:18,613 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:54]
+2021-11-22 22:50:24,461 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:54]
+2021-11-22 22:50:25,682 ERROR: Exception on /delete_post [GET] [in /home/danya/microblog/venv/lib/python3.9/site-packages/flask/app.py:1457]
 Traceback (most recent call last):
   File "/home/danya/microblog/venv/lib/python3.9/site-packages/flask/app.py", line 2073, in wsgi_app
     response = self.full_dispatch_request()
@@ -106,9 +87,9 @@ Traceback (most recent call last):
     return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
   File "/home/danya/microblog/venv/lib/python3.9/site-packages/flask_login/utils.py", line 272, in decorated_view
     return func(*args, **kwargs)
-TypeError: delete_post() missing 1 required positional argument: 'post_body'
-2021-11-22 22:08:06,664 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:54]
-2021-11-22 22:08:07,402 ERROR: Exception on /delete_post [GET] [in /home/danya/microblog/venv/lib/python3.9/site-packages/flask/app.py:1457]
+TypeError: delete_post() missing 1 required positional argument: 'body'
+2021-11-22 22:50:30,613 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:54]
+2021-11-22 22:50:30,767 ERROR: Exception on /delete_post [GET] [in /home/danya/microblog/venv/lib/python3.9/site-packages/flask/app.py:1457]
 Traceback (most recent call last):
   File "/home/danya/microblog/venv/lib/python3.9/site-packages/flask/app.py", line 2073, in wsgi_app
     response = self.full_dispatch_request()
@@ -120,6 +101,26 @@ Traceback (most recent call last):
     return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
   File "/home/danya/microblog/venv/lib/python3.9/site-packages/flask_login/utils.py", line 272, in decorated_view
     return func(*args, **kwargs)
-TypeError: delete_post() missing 1 required positional argument: 'post_body'
-2021-11-22 22:09:06,611 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:54]
-2021-11-22 22:09:14,383 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:54]
+TypeError: delete_post() missing 1 required positional argument: 'body'
+2021-11-22 22:52:48,166 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:54]
+2021-11-22 22:52:49,641 ERROR: Exception on /delete_post [GET] [in /home/danya/microblog/venv/lib/python3.9/site-packages/flask/app.py:1457]
+Traceback (most recent call last):
+  File "/home/danya/microblog/venv/lib/python3.9/site-packages/flask/app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/danya/microblog/venv/lib/python3.9/site-packages/flask/app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/danya/microblog/venv/lib/python3.9/site-packages/flask/app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/danya/microblog/venv/lib/python3.9/site-packages/flask/app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/home/danya/microblog/venv/lib/python3.9/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+TypeError: delete_post() missing 1 required positional argument: 'body'
+2021-11-22 22:53:04,063 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:54]
+2021-11-22 22:54:09,770 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:54]
+2021-11-22 22:54:33,683 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:54]
+2021-11-22 22:54:59,302 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:54]
+2021-11-22 22:57:08,943 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:54]
+2021-11-22 22:58:00,155 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:54]
+2021-11-22 22:59:29,871 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:54]
+2021-11-22 23:00:17,576 INFO: Microblog startup [in /home/danya/microblog/app/__init__.py:54]

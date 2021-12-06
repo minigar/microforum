@@ -11,6 +11,8 @@ from app.email import send_password_reset_email
 from datetime import datetime
 from app.forms import PostForm 
 from flask_babel import _, get_locale
+from guess_language import guess_language
+from app.translate import translate
 
 
 # create a var (if user is logged in) what include user's last seen
@@ -19,7 +21,14 @@ def before_request():
     if current_user.is_authenticated:
         current_user.last_seen = datetime.utcnow()
         db.session.commit()
+
     g.locale = str(get_locale())
+
+
+@app.route('/translate', methods=['POST'])
+@login_required
+def translate_text():
+    return jsonify({'text': translate(request.form['text'], request.form['source_language'], request.form['dest_language'])})
 
 
 # regist decorate func as route
@@ -36,7 +45,11 @@ def index():
     form = PostForm()
     
     if form.validate_on_submit():
-        post = Post(body=form.post.data, author=current_user)
+        language = guess_language(form.post.data)
+        if language == 'UNKNOWN' or len(language) > 5:
+            language = ''
+            
+        post = Post(body = form.post.data, author = current_user, language = language)
     
         db.session.add(post)
         db.session.commit()
@@ -263,6 +276,7 @@ def unfollow(username):
 def explore():
     print()
     print()
+    print(url_for('explore'))
     
     page = request.args.get('page', 1, type=int)
     posts = Post.query.order_by(Post.timestamp.desc()).paginate(

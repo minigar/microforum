@@ -12,6 +12,7 @@ from logging.handlers import RotatingFileHandler
 import os
 from flask_babel import Babel, _, lazy_gettext as _l
 from flask_moment import Moment
+from flask_bootstrap import Bootstrap
 
 
 # making falsk app and him name be as filename
@@ -28,6 +29,8 @@ login.login_message = _l('Please log in to access this page.')
 
 csrf = CSRFProtect(0)
 csrf.init_app(app)
+
+bootstrap = Bootstrap(app)
 
 mail= Mail(app)
 
